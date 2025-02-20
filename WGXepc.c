@@ -1074,10 +1074,10 @@ if (strcmp(argv[1],"-f")==0) /* All three fans use the CPUfan output on Bank2 */
 	else
 	{
     setw83627(bank_select,0x02); /* Set Bank2 */
-	setw83627(0x21,0x1e);        /* Set T1 point at 30C */
+	setw83627(0x21,0x3c);        /* Set T1 point at 60C */
 	fanspeed_min = strtol(argv[2],NULL,16); /*Convert argument to hex integer*/
 	setw83627(0x27,fanspeed_min);
-	printf("Minimum fanspeed set to %x at 30°C or less\n",fanspeed_min);
+	printf("Minimum fanspeed set to %x at 60°C or less\n",fanspeed_min);
 	} 
 	}
 else	
